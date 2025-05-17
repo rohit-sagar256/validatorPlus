@@ -22,10 +22,16 @@ class Validator
 
     foreach ($this->fields as $name => $field) {
       $value = $data[$name] ?? null;
+      $fieldKey = $field->getKey();
 
       foreach ($field->getRules() as $rule) {
+
+        if (method_exists($rule, "setLabel")) {
+          $rule->setLabel($field->getLable());
+        }
+
         if (!$rule->passes($name, $value)) {
-          $this->errors[$name][] = $rule->message();
+          $this->errors[$fieldKey][] = $rule->message($fieldKey);
         }
       }
     }

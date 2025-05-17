@@ -24,7 +24,7 @@ class RequiredRuleTest extends TestCase
   {
     $rule = new RequiredRule();
     $rule->passes('name', '');
-    $this->assertEquals('This name field is required', $rule->message('name'));
+    $this->assertEquals('The name field is required.', $rule->message('name'));
   }
 
   public function test_error_message_custom()

@@ -9,4 +9,6 @@ interface RuleInterface
   public function message(string $attribute): string;
 
   public function customMessage(string $msg): void;
+
+  public function setLabel(string $label): void;
 }

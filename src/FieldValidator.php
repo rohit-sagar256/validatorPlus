@@ -3,6 +3,7 @@
 namespace ValidatorPlus;
 
 use ValidatorPlus\Rules\RequiredRule;
+use ValidatorPlus\Rules\RuleInterface;
 
 class FieldValidator
 {
@@ -10,13 +11,17 @@ class FieldValidator
 
   protected array $rules = [];
 
+  protected ?string $label = null;
+
+  protected ?string $alias = null;
+
   public function __construct(string $field)
   {
     $this->field = $field;
   }
 
 
-  public function required(string $message = null): self
+  public function required(string $attribute = null, string $message = null): self
   {
     $rule = new RequiredRule();
 
@@ -26,6 +31,36 @@ class FieldValidator
 
     $this->rules[] = $rule;
     return $this;
+  }
+
+
+  public function addRule(RuleInterface $rule): self
+  {
+    $this->rules[] = $rule;
+    return $this;
+  }
+
+
+  public function alias(string $alias): self
+  {
+    $this->alias = $alias;
+    return $this;
+  }
+
+  public function label(string $label): self
+  {
+    $this->label = $label;
+    return $this;
+  }
+
+  public function getKey()
+  {
+    return $this->alias ?? $this->field;
+  }
+
+  public function getLable(): string
+  {
+    return $this->label ?? $this->field;
   }
 
   public function getRules(): array

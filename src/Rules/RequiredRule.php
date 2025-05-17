@@ -8,6 +8,7 @@ class RequiredRule implements RuleInterface
 {
 
   protected ?string $customMessage = null;
+  protected ?string $label = null;
 
   public function passes($attribute, $value): bool
   {
@@ -16,11 +17,21 @@ class RequiredRule implements RuleInterface
 
   public function message(string $attribute): string
   {
-    return $this->customMessage ?? "This {$attribute} field is required";
+    $msg =  $this->customMessage ?? "The :attribute field is required.";
+    return str_replace(
+      [':attribute'],
+      [$this->label ?? $attribute],
+      $msg
+    );
   }
 
   public function customMessage(string $msg): void
   {
     $this->customMessage = $msg;
+  }
+
+  public function setLabel(string $label): void
+  {
+    $this->label = $label;
   }
 }
