@@ -1,0 +1,22 @@
+{
+  "name": "rohit-sagar/validatorplus",
+  "description": "A simple light-weight php validator package",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "rohit-sagar256",
+      "email": "dev.rohit256@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.0",
+    "symfony/console": "^7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "ValidatorPlus\\": "src/"
+    }
+  }
+}
