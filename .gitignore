@@ -1,0 +1,73 @@
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+.vs/
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
+# Dependency directories
+/node_modules/
+/vendor/
+/.pnp/
+.pnp.js
+
+# Compiled output
+/dist/
+/build/
+/out/
+/target/
+*.class
+*.jar
+*.war
+
+# Logs and databases
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.sqlite
+*.db
+
+# Operating System files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Cache directories
+.npm/
+.eslintcache
+.stylelintcache
+*.cache
+.sass-cache/
+
+# Test coverage
+/coverage/
+.nyc_output/
+junit.xml
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~
+
+# Build tools specific
+.gradle/
+.maven/
+cmake-build-*/
+
+# Personal files
+*.private
+*.secret
+secrets.json
+credentials.json
