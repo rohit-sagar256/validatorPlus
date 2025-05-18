@@ -1,4 +1,5 @@
 
+[![Run Tests](https://github.com/rohit-sagar256/validatorPlus/actions/workflows/run-tests.yml/badge.svg)](https://github.com/rohit-sagar256/validatorPlus/actions/workflows/run-tests.yml)
 # ValidatorPlus
 
 **ValidatorPlus** is a lightweight, chainable validation package built in PHP — perfect for console applications, CLI tools, or any PHP project where you want custom and clean validation without relying on full-stack frameworks.
